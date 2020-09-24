@@ -1,0 +1,16 @@
+.login-form {
+    background-image: url(../../../assets/login.jpg);
+     background-size: cover;
+    height: 90vh;
+    background-position-y: -110px;
+    background-repeat: no-repeat;
+ 
+}
+
+
+@media screen and (max-width: 500px) {
+       .login-form {
+               background-position-x: -140px;
+                background-position-y: 0px;
+       }
+}

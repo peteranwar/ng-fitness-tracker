@@ -1,13 +1,24 @@
 .welcome{
     text-align: center;
-    padding: 20px;
-    
+    padding: 40px;
+    background-image: url(../../assets/gym.jpg);
+    background-size: cover;
+    height: 92vh;
+    font-size: 20px;
 
     h1 {
         font-size: 30px;
         font-weight: 600;
-        color: blue;
+        color: #f3a414;
+        
     }
 
+}
+
+
+@media screen and (max-width: 500px) {
+       .welcome {
+            background-position-x: -480px;
+       }
 }
 

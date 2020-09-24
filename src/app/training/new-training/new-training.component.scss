@@ -1,7 +1,26 @@
 .new-trainig {
     padding: 30px;
+
+   
+ 
 }
 
 mat-card-title {
     padding: 20px;
+}
+
+.neww {
+   background-image: url(../../../assets/new-training-phone.png);
+    background-size: cover;
+    height: 83vh;
+    background-position-y: -120px;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 500px) {
+       .neww {
+                 background-image: url(../../../assets/new-training-phone.png);
+                 background-position-x: -145px;
+                 background-position-y: 130px;
+       }
 }

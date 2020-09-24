@@ -1,3 +1,19 @@
 mat-form-field {
     width: 300px;
 }
+
+.signup-form {
+    background-image: url(../../../assets/signup.jpg);
+     background-size: cover;
+    height: 90vh;
+    background-position-y: -120px;
+    background-repeat: no-repeat;
+ 
+}
+
+@media screen and (max-width: 500px) {
+       .signup-form {
+               background-position-x: -183px;
+                background-position-y: 0px;
+       }
+}

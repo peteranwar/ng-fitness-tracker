@@ -3,9 +3,19 @@ a {
     color: white;
     &:hover,
     &:active {
-        color: lightblue;
+       color: #f57414;
     }
 }
 .nav-caption{
     padding-left: 10px;
+}
+
+.side-nav {
+    background-image: url(../../../assets/sidenav.jpg);
+     background-size: cover;
+    height: 100vh;
+    // background-position-y: 0;
+    background-position-x: -425px;
+    background-repeat: no-repeat;
+ 
 }
