@@ -5,7 +5,7 @@ import * as fromAuth from './auth/auth.reducer';
 
 export interface State {
     ui: fromUI.State;
-    auth: fromAuth.State
+    auth: fromAuth.State;
 }
 
 

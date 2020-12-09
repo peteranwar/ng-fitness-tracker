@@ -3,7 +3,7 @@ import {  Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
-import * as fromTraining from './training.reducer'
+import * as fromTraining from './training.reducer';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class TrainingComponent implements OnInit {
 
 
   constructor(private trainingService: TrainingService,
-          private store: Store<fromTraining.State>) { }
+              private store: Store<fromTraining.State>) { }
 
   ngOnInit(): void {
     this.onGoingTraining$ = this.store.select(fromTraining.getIsTraining);

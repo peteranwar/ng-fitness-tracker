@@ -9,8 +9,9 @@ import { PastTrainingComponent } from './past-training/past-training.component';
 import { NewTrainingComponent } from './new-training/new-training.component';
 import { CurrentComponent } from './current/current.component';
 
-import { StoreModule } from '@ngrx/store'
-import { trainingReducer } from './training.reducer'
+import { StoreModule } from '@ngrx/store';
+import { trainingReducer } from './training.reducer';
+
 @NgModule({
     declarations: [
       TrainingComponent,

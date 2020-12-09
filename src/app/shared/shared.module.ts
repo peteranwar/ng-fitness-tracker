@@ -19,7 +19,7 @@ import { MaterialModule } from './../material.module';
         CommonModule,
         FormsModule,
         MaterialModule,
-       FlexLayoutModule,
+        FlexLayoutModule,
     ]
 })
 export class SharedModule {}

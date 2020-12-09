@@ -19,22 +19,21 @@ import * as fromRoot from '../../app.reducer';
 export class NewTrainingComponent implements OnInit {
 exercises$: Observable<Exercise[]>;
 
-isLoading$ : Observable<boolean>;
+isLoading$: Observable<boolean>;
 
 
 constructor(
-  private trainingService: TrainingService, 
-  private uiService: UiService,
+  private trainingService: TrainingService,
   private store: Store<fromTraining.State>) { }
 
   ngOnInit(): void {
    this.isLoading$ = this.store.select(fromRoot.getIsLoading);
-   this.exercises$ = this.store.select(fromTraining.getAvailebleExercises);
+   this.exercises$ = this.store.select(fromTraining.getAvailableExercises);
    this.fetchExercises();
   }
 
   fetchExercises(){
-    this.trainingService.fetchAvailableExercises(); 
+    this.trainingService.fetchAvailableExercises();
   }
 
   onStartTraining(form: NgForm) {

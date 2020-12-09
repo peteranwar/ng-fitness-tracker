@@ -6,7 +6,7 @@
     "outDir": "./out-tsc/app",
     "module": "esnext",
     "types": []
-    
+
   },
   "files": [
     "src/main.ts",
@@ -18,8 +18,8 @@
     "**/*.spec.ts",
     "**/*.d.ts",
     "../node_modules/api-ai-javascript/index.ts",
-    "./main.ts",
-    "./polyfills.ts"
+    "./src/main.ts",
+    "./src/polyfills.ts"
   ],
   "exclude": [
     "src/test.ts",

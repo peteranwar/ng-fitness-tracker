@@ -10,7 +10,8 @@ const initialState: State = {
     isLoading: false
 };
 
-export function uiReducer (state = initialState, action: UIAction) {
+// tslint:disable-next-line: typedef
+export function uiReducer( state = initialState, action: UIAction) {
     switch (action.type) {
         case START_LOADING:
             return {
@@ -20,11 +21,11 @@ export function uiReducer (state = initialState, action: UIAction) {
             return {
                 isLoading: false
             };
-            
+
         default: {
-            return  state;
+            return state;
         }
-     
+
     }
 }
 

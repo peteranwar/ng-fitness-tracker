@@ -1,7 +1,7 @@
 import {Exercise} from './exercise.model';
 import { Action } from '@ngrx/store';
 
-export const SET_AVAILABLE_TRAININGS= '[Training] set Available Training';
+export const SET_AVAILABLE_TRAININGS = '[Training] set Available Training';
 export const SET_FINISHED_TRAININGS = '[Training] set Finished Training';
 export const START_TRAINING = '[Training]  Start Training';
 export const STOP_TRAINING = '[Training]  Stop Training';

@@ -19,6 +19,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth/auth.service';
 import { TrainingService } from './training/training.service';
 import { AuthModule } from './auth/auth.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -26,10 +27,11 @@ import { AuthModule } from './auth/auth.module';
     AppComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    PageNotFoundComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,

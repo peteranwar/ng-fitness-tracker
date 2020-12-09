@@ -1,4 +1,3 @@
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TrainingService } from './../training.service';
 import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
@@ -8,7 +7,7 @@ import {Exercise} from './../exercise.model';
 import { MatPaginator } from '@angular/material/paginator';
 
 import { Store } from '@ngrx/store';
-import * as fromTraining from '../training.reducer'
+import * as fromTraining from '../training.reducer';
 
 @Component({
   selector: 'app-past-training',
@@ -24,13 +23,13 @@ export class PastTrainingComponent implements OnInit, AfterViewInit {
 
 
   constructor(private trainingServise: TrainingService,
-             private store: Store<fromTraining.State>) { }
+              private store: Store<fromTraining.State>) { }
 
   ngOnInit(): void {
    this.store.select(fromTraining.getFinishedExercises)
     .subscribe((exercises: Exercise[]) => {
       this.dataSource.data = exercises;
-    })
+    });
     this.trainingServise.fetchCompletedOrCancelledExercises();
   }
   ngAfterViewInit() {

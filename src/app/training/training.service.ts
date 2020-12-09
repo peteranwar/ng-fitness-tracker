@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Subscription, Observable } from 'rxjs';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/take';
-import { map } from 'rxjs/operators';
+
 import { take } from 'rxjs/operators';
+
 import { Exercise } from './exercise.model';
 import { UiService } from '../shared/ui.service';
 
@@ -24,7 +23,7 @@ export class TrainingService {
     private store: Store<fromTraining.State>
   ) {}
 
-  fetchAvailableExercises() {
+  fetchAvailableExercises(): void {
     this.store.dispatch(new UI.StartLoading());
     this.firebaseSubscription.push(
       this.db
@@ -40,11 +39,9 @@ export class TrainingService {
             //   name: doc.payload.doc.data().name,
             //   duration: doc.payload.doc.data().duration,
             //   calories: doc.payload.doc.data().calories,
-            
             };
           });
         })
-         
         .subscribe(
           (exercises: Exercise[]) => {
             this.store.dispatch(new UI.StopLoading());
@@ -62,23 +59,23 @@ export class TrainingService {
     );
   }
 
-  startExercise(selectedId: string) {
+  startExercise(selectedId: string): void {
     this.store.dispatch(new Training.StartTraining(selectedId));
   }
 
-  completeExercise() {
+  completeExercise(): void {
     this.store.select(fromTraining.getActiveTraining).pipe(take(1))
       .subscribe((ex: any)  => {
         this.addDataToDatabase({
           ...ex as unknown as Exercise ,
           date: new Date(),
-          state:'completed'
+          state: 'completed'
         });
         this.store.dispatch(new Training.StopTraining());
       });
   }
 
-  cancelExercise(progress: number) {
+  cancelExercise(progress: number): void {
     this.store.select(fromTraining.getActiveTraining).pipe(take(1))
       .subscribe(ex => {
         this.addDataToDatabase({
@@ -93,7 +90,7 @@ export class TrainingService {
       });
   }
 
-  fetchCompletedOrCancelledExercises() {
+  fetchCompletedOrCancelledExercises(): void {
     this.firebaseSubscription.push(
       this.db
         .collection('finishExercises')
@@ -104,11 +101,11 @@ export class TrainingService {
     );
   }
 
-  cancelSubscription() {
+  cancelSubscription(): void {
     this.firebaseSubscription.forEach((sub) => sub.unsubscribe());
   }
 
-  private addDataToDatabase(exercise: Exercise) {
+  private addDataToDatabase(exercise: Exercise): void {
     this.db.collection('finishExercises').add(exercise);
   }
 }

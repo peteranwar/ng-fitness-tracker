@@ -1,13 +1,16 @@
-
+mat-cell,
+mat-header-cell {
+  text-align: center;
+  justify-content: center;
+}
 mat-cell {
-    font-size: 12px;
-    text-align: center;
-    justify-content: center;
-
+    font-size: 15px;
 }
 .date{
-    font-size: 10px;
+    font-size: 13px;
 }
 mat-cell:first-of-type, mat-header-cell:first-of-type, mat-footer-cell:first-of-type {
     padding-left: 7px;
 }
+
+
